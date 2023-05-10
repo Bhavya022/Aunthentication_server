@@ -43,7 +43,7 @@ passport.use(
     {
       clientID: GOOGLE_CLIENT_ID,
       clientSecret: GOOGLE_CLIENT_SECRET,
-      callbackURL: "https://real-talk-vd0c.onrender.com/auth/google/callback",
+      callbackURL: "https://realtalk-xptc.onrender.com/auth/google/callback",
       passReqToCallback: true,
     },
     async function (request, accessToken, refreshToken, profile, done) { 
@@ -104,7 +104,7 @@ authRoute.get("/auth/github", async (req, res) => {
 // passport.use(new GitHubStrategy({
 //   clientID: process.env.GITHUB_CLIENT_ID,
 //   clientSecret: process.env.GITHUB_CLIENT_SECRET,
-//   callbackURL: "https://talkies-authentication-server-1.onrender.com/auth/github/callback"
+//   callbackURL: "https://realtalk-xptc.onrender.com/auth/github/callback"
 // },
 //   async function (request, accessToken, refreshToken, profile, done) {
 //     let email = profile._json.email;
@@ -137,7 +137,7 @@ authRoute.get("/auth/github", async (req, res) => {
 //       {
 //         clientID: process.env.GITHUB_CLIENT_ID,
 //         clientSecret: process.env.GITHUB_CLIENT_SECRET,
-//         callbackURL: "https://talkies-authentication-server-1.onrender.com/auth/github/callback",
+//         callbackURL: "https://realtalk-xptc.onrender.com/auth/github/callback",
 //         scope: "user:email",
 //       },
 //       async function (accessToken, refreshToken, profile, done) {
