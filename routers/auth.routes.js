@@ -26,24 +26,25 @@ authRoute.get(
 authRoute.get('/auth/google/success', (req, res) => {
   console.log("dashboard") 
   console.log(userProfile)  
-  res.send(userProfile)
+  res.send('google auth success') 
+  //res.send(userProfile)
   //res.redirect("")
  // res.send(userProfile)
   //res.sendFile(__dirname+ "C:\Users\Dell\Desktop\chummy-run-6992\Backend\Authentication\view\dashboard.html") 
   //res.send("successfully login",userProfile) 
   //res.redirect("/") 
   //res.redirect('/success');
-}) 
+}) //
 authRoute.get('/profile', (req, res) => res.send(userProfile));
-const GOOGLE_CLIENT_ID = "993273098507-6j4907e7e8jjjdb1pgrv68aau62inq4g.apps.googleusercontent.com"
-const GOOGLE_CLIENT_SECRET = "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"
+const GOOGLE_CLIENT_ID = "993273098507-li9fto57832qa3l9vu8gf2jjcncra4d1.apps.googleusercontent.com"
+const GOOGLE_CLIENT_SECRET = "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"
 passport.use(
 
   new GoogleStrategy(
     {
       clientID: GOOGLE_CLIENT_ID,
       clientSecret: GOOGLE_CLIENT_SECRET,
-      callbackURL: "https://realtalk-xptc.onrender.com/auth/google/callback",
+      callbackURL: "http://localhost:8080/auth/google/callback",
       passReqToCallback: true,
     },
     async function (request, accessToken, refreshToken, profile, done) { 
@@ -61,8 +62,9 @@ passport.use(
 );
 
 authRoute.get('/auth/github/success', (req, res) => {
-  console.log("dashboard")
-  res.sendFile(__dirname+ "/../view/dashboard.html")
+  //console.log("dashboard") 
+  res.send("github auth successful") 
+  //res.sendFile(__dirname+ "/../view/dashboard.html")
   
 })
 

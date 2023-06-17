@@ -11,7 +11,7 @@ const userrouter = express.Router();
 
 // Sign in part is hare ...............................
 
-userrouter.post("/sign", async (req, res) => {
+userrouter.post("/register", async (req, res) => {
   try {
     const { name, email, password } = req.body;
 
@@ -77,7 +77,7 @@ userrouter.post("/login", async (req, res) => {
     } else {
       bcrypt.compare(password, user.password, (err, result) => {
         if (result) {
-          let token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
+          let token = jwt.sign({ userId: user._id,name:user.name }, process.env.JWT_SECRET, {
             expiresIn: "30m",
           });
 
