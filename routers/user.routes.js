@@ -15,9 +15,9 @@ userrouter.post("/register", async (req, res) => {
   try {
     const { name, email, password } = req.body;
 
-    const auser = await usermodel.findOne({ email });
-
-    if (auser) {
+    const auser = await usermodel.find({email});
+   console.log(auser)
+    if (auser.length > 0) {
      return res.send({ "ok": false, "msg": "User Already exist" });
     } else{
       const hash = bcrypt.hashSync(password,3);
