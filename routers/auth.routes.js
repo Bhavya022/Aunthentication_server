@@ -27,10 +27,10 @@ authRoute.get('/auth/google/success', (req, res) => {
   console.log("dashboard") 
   console.log(userProfile)  
   res.send('google auth success') 
+ // res.sendFile(__dirname+"/./index.html") 
   //res.send(userProfile)
   //res.redirect("")
- // res.send(userProfile)
-  //res.sendFile(__dirname+ "C:\Users\Dell\Desktop\chummy-run-6992\Backend\Authentication\view\dashboard.html") 
+ // res.send(userProfile) 
   //res.send("successfully login",userProfile) 
   //res.redirect("/") 
   //res.redirect('/success');
