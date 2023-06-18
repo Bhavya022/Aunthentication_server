@@ -72,7 +72,7 @@ userrouter.post("/login", async (req, res) => {
 
     const user = await usermodel.findOne({ email });
     console.log(user);
-    if (!user) {
+    if (user.length<0) {
       res.send({"ok":false, "msg": "User Not found, Please Register First" });
     } else {
       bcrypt.compare(password, user.password, (err, result) => {
